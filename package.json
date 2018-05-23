@@ -1,0 +1,11 @@
+{
+  "name": "leads",
+  "version": "1.0.0",
+  "description": "submit and get leads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Carlisle",
+  "license": "ISC"
+}
