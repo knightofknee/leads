@@ -1,4 +1,4 @@
 
-   lastc, firstc, propTypec, projectc, 8/8/2003
+   lastc, firstc, propTypep, projectc, 8/8/2003
    what, can, i, list, 8/30/2012
    half, of, a, haiku, 10/11/2012

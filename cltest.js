@@ -1,14 +1,8 @@
-// import submitLeadFunction
-
-// request a file to be entered
-
-// run submitLeadFunctionToDatabase
-// pull data from database and sort it
-// print these to screen
+let reader = require('./reader').readLeads
+let sorter = require('./sorter')
+let display = require('./display')
 
 // reads the 3 files by creating 3 promises
-let reader = require('./reader')
-let sorter = require('./sort')
 fs = require('fs')
 let spacePromise = new Promise(function(resolve, reject) {
   fs.readFile('space.txt', 'utf8', function (err,data) {
@@ -35,8 +29,11 @@ let commaPromise = new Promise(function(resolve, reject) {
   })
 })
 // now the file data can be used from those promises
-// use sort function
 Promise.all([spacePromise, pipePromise, commaPromise])
 .then((data) =>{return [...data[0], ...data[1], ...data[2]]})
-.then((resultsArray) => {console.log(sorter(resultsArray, 'lasddt'))})
+.then((resultsArray) => {
+  display(sorter(resultsArray, 'date'), 'Ordered by Date')
+  display(sorter(resultsArray, 'last name'), 'Ordered by Last Name')
+  display(sorter(resultsArray, 'projType'), 'Ordered by Project type and name')
+})
 
