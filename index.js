@@ -3,8 +3,7 @@ const app = express()
 const sorter = require('./sorter')
 const reader = require('./reader').readOne
 
-let leads = [['lastnammee', 'first!', 'HOUSE', 'steam room', '11/12/2018']]
-
+let leads = []
 app.use(express.json())
 app.use(express.urlencoded())
 
@@ -20,4 +19,4 @@ app.get('/leads/propertytype', (req, res) => res.json(sorter(leads, 'propType'))
 app.get('/leads/startdate', (req, res) => res.json(sorter(leads, 'date')))
 app.get('/leads/project', (req, res) => res.json(sorter(leads, 'project')))
 
-app.listen(3000, () => console.log('Leads API listening on port 3000!!!'))
+module.exports = app.listen(3000, () => console.log('Leads API listening on port 3000!!!'))

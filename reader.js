@@ -15,6 +15,7 @@ function readOne(text){
     return lead
 }
 function readLeads(text) {
+  if (text === '') return [[]]
   let leadsArray = text.split('\n').filter(entry => entry !== '')
   .map(entry => entry.trim())
 
@@ -24,6 +25,5 @@ function readLeads(text) {
   }
   return results
 }
-
 
 module.exports = {readLeads, readOne}
