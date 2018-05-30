@@ -1,4 +1,4 @@
-
+to start, npm install
 
 To run the API, run 'node index.js' in the project directory.
 
@@ -9,3 +9,5 @@ To run the mocha tests, run 'mocha test/leadsTest.js' in your command line in th
 One assumption made is that dates will be submitted as strings in the format 'M/D/YYY'
 
 The API returns leads in the form of a sorted array of arrays, where each lead is an array of 5 entries, one for each data field.
+
+To post to the API route, include a parameter on the body called 'lead' with 5 values in a delimited string, using commas, pipes or spaces
