@@ -13,7 +13,7 @@ app.post('/leads', (req, res) => {
     leads = [...leads, lead]
     res.send(202, 'lead submitted successfully')
   }
-  else res.send(400, `Must submit a parameter called 'lead' as an array of length 5`)
+  else res.send(400, `Must submit a parameter called 'lead' as a string with 5 values delimited using commas, pipes or spaces, in the order of last name, first name, project type, project name, start date`)
 })
 app.get('/leads/propertytype', (req, res) => res.json(sorter(leads, 'propType')))
 app.get('/leads/startdate', (req, res) => res.json(sorter(leads, 'date')))

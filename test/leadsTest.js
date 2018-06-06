@@ -135,7 +135,7 @@ describe('Leads application', function() {
       .send({lead: 'one two three four'})
       .expect(400, function(err, res){
         if (err) return done(err)
-        expect(res.text).to.equal(`Must submit a parameter called 'lead' as an array of length 5`)
+        expect(res.text).to.equal(`Must submit a parameter called 'lead' as a string with 5 values delimited using commas, pipes or spaces, in the order of last name, first name, project type, project name, start date`)
         done()
       })
     })
